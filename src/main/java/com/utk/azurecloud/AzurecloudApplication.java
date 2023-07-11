@@ -14,6 +14,11 @@ public class AzurecloudApplication {
 		return "Congratulation your app deployed successfully on Azure ";
 	}
 	
+	@GetMapping("/message1")
+	public String message1() {
+		return "Congratulation your app deployed successfully on Azure 1";
+	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(AzurecloudApplication.class, args);
 	}
