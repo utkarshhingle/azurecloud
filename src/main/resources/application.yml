@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://utksqlserver.database.windows.net:1433;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: utksqladmin
+    password: Password@123
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+server:
+  port: 9191
+
+
