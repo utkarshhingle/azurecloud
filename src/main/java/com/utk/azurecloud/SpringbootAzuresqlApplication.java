@@ -17,10 +17,10 @@ public class SpringbootAzuresqlApplication {
     @Autowired
     private EmployeeRepository repository;
 
-    @PostMapping("/employee")
-    public String addEmployee(@RequestBody Employee employee) {
-        return repository.save(employee);
-    }
+//    @PostMapping("/employee")
+//    public String addEmployee(@RequestBody Employee employee) {
+//        return repository.save(employee);
+//    }
 
 //    @GetMapping("/employees")
 //    public List<Employee> getEmployees() {
@@ -36,5 +36,16 @@ public class SpringbootAzuresqlApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringbootAzuresqlApplication.class, args);
     }
+
+	@PostMapping("/employee")
+	public EmployeeTest addEmployee(@RequestBody EmployeeTest employee) {
+	    return repository.save(employee);
+	}
+	
+	@GetMapping("/employees")
+	public List<EmployeeTest> getEmployees() {
+	    return repository.findAll();
+	}
+	
 
 }

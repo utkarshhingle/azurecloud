@@ -9,13 +9,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
-
+@Entity
+@Table
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee {
-
+public class EmployeeTest {
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
     private String dept;
