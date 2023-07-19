@@ -1,4 +1,4 @@
-package com.utk.azurecloud;
+package com.utk.azurecloud.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
