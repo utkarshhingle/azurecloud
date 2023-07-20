@@ -34,13 +34,14 @@ public class ImageController {
     @PostMapping
 	@CrossOrigin(origins ="*")
     public ResponseEntity<String> uploadImage(
-            @RequestParam("age") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime age,
+            @RequestParam("birth") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime birth,
+            @RequestParam("death") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime death,
             @RequestParam("name") String name,
             @RequestParam("description") String description,
             @RequestParam("image") MultipartFile image) {
         try {
             // Save the image using the imageService
-            imageService.saveImage(age.toLocalDate(), name, description, image.getBytes());
+            imageService.saveImage(birth.toLocalDate(),death.toLocalDate(), name, description, image.getBytes());
             return ResponseEntity.ok("Image uploaded successfully.");
         } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

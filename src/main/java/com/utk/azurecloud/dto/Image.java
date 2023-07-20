@@ -18,11 +18,16 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDate age;
+    private LocalDate birth;
+    
+    private LocalDate death;
+    
+    
+    private int age;
 
     private String name;
 
-    @Column(length = 500)
+    @Column(length = 2000)
     private String description;
 
     @Lob
@@ -30,13 +35,20 @@ public class Image {
 
     public Image() {
     }
+    
+    
 
-    public Image(LocalDate age, String name, String description, byte[] imageBytes) {
-        this.age = age;
-        this.name = name;
-        this.description = description;
-        this.imageBytes = imageBytes;
-    }
+	public Image(LocalDate birth, LocalDate death, int age, String name, String description,
+			byte[] imageBytes) {
+		this.birth = birth;
+		this.death = death;
+		this.age = age;
+		this.name = name;
+		this.description = description;
+		this.imageBytes = imageBytes;
+	}
+
+
 
 	public Long getId() {
 		return id;
@@ -46,11 +58,27 @@ public class Image {
 		this.id = id;
 	}
 
-	public LocalDate getAge() {
+	public LocalDate getBirth() {
+		return birth;
+	}
+
+	public void setBirth(LocalDate birth) {
+		this.birth = birth;
+	}
+
+	public LocalDate getDeath() {
+		return death;
+	}
+
+	public void setDeath(LocalDate death) {
+		this.death = death;
+	}
+
+	public int getAge() {
 		return age;
 	}
 
-	public void setAge(LocalDate age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
@@ -78,6 +106,7 @@ public class Image {
 		this.imageBytes = imageBytes;
 	}
 
+ 
     
     
     // Getters and setters

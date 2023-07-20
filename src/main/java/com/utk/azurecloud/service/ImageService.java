@@ -2,6 +2,7 @@ package com.utk.azurecloud.service;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,8 +22,8 @@ public class ImageService {
         this.imageRepository = imageRepository;
     }
 
-    public void saveImage(LocalDate age, String name, String description, byte[] imageBytes) {
-        Image image = new Image(age, name, description, imageBytes);
+    public void saveImage(LocalDate birth,LocalDate death, String name, String description, byte[] imageBytes) {
+        Image image = new Image(birth,death,Period.between(birth, death).getYears(), name, description, imageBytes);
         imageRepository.save(image);
     }
 
