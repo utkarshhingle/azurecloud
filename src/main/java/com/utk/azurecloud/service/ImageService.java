@@ -22,8 +22,8 @@ public class ImageService {
         this.imageRepository = imageRepository;
     }
 
-    public void saveImage(LocalDate birth,LocalDate death, String name, String description, byte[] imageBytes) {
-        Image image = new Image(birth,death,Period.between(birth, death).getYears(), name, description, imageBytes);
+    public void saveImage(LocalDate birth,LocalDate death, String name,String address, String description, byte[] imageBytes) {
+        Image image = new Image(birth,death,Period.between(birth, death).getYears(), name,address, description, imageBytes);
         imageRepository.save(image);
     }
 

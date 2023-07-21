@@ -26,6 +26,9 @@ public class Image {
     private int age;
 
     private String name;
+    
+    @Column(length = 500)
+    private String address;
 
     @Column(length = 2000)
     private String description;
@@ -38,14 +41,27 @@ public class Image {
     
     
 
-	public Image(LocalDate birth, LocalDate death, int age, String name, String description,
+	public Image(LocalDate birth, LocalDate death, int age, String name,String address, String description,
 			byte[] imageBytes) {
 		this.birth = birth;
 		this.death = death;
 		this.age = age;
 		this.name = name;
+		this.address = address;
 		this.description = description;
 		this.imageBytes = imageBytes;
+	}
+
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 

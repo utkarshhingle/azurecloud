@@ -37,11 +37,12 @@ public class ImageController {
             @RequestParam("birth") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime birth,
             @RequestParam("death") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime death,
             @RequestParam("name") String name,
+            @RequestParam("description") String address,
             @RequestParam("description") String description,
             @RequestParam("image") MultipartFile image) {
         try {
             // Save the image using the imageService
-            imageService.saveImage(birth.toLocalDate(),death.toLocalDate(), name, description, image.getBytes());
+            imageService.saveImage(birth.toLocalDate(),death.toLocalDate(), name,address, description, image.getBytes());
             return ResponseEntity.ok("Image uploaded successfully.");
         } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
